@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificar Mudança de Preço</title>
+</head>
+<body>
+   
+      <script>
+        function verificarMudanca() {
+          // Solicita a digitação do preço anterior
+          var precoAnterior = parseFloat(prompt("Digite o preço anterior do produto:"));
+
+          // Solicita a digitação do preço atual
+          var precoAtual = parseFloat(prompt("Digite o preço atual do produto:"));
+          
+          // Calcula a diferença entre os preços
+          var diferenca = precoAtual - precoAnterior;
+          
+
+          // Verifica se houve aumento ou redução de preço
+          var aumentoOuReducao = "";
+          if (diferenca > 0) {
+            aumentoOuReducao = "mais caro";
+          } else if (diferenca < 0) {
+            aumentoOuReducao = "mais barato";
+          } else {
+            aumentoOuReducao = "o mesmo preço";
+          }
+          
+          // Calcula o valor absoluto da diferença
+          var diferencaAbsoluta = Math.abs(diferenca);
+          
+          // Calcula o percentual de mudança
+          var percentual = (diferencaAbsoluta / precoAnterior) * 100;
+          
+          // Exibe o resultado na página
+          var output = document.getElementById("output");
+          output.innerHTML = "<br>Analisando os valores informados.<br> <br>"+
+                             "O produto custava R$" + precoAnterior.toFixed(2) + " e agora custa R$" + precoAtual.toFixed(2) + ".<br>" +
+                             "Hoje o produto está " + aumentoOuReducao + ".<br>" +
+                             "O preço " + (diferenca > 0 ? "subiu" : "caiu") + " R$" + diferencaAbsoluta.toFixed(2) + " em relação ao preço anterior.<br>" +
+                             "Uma variação de " + percentual.toFixed(2) + "% " + (diferenca > 0 ? "pra cima" : "pra baixo") + ".";
+        }
+      </script>
+   
+      <h1>Preço Mudou</h1>
+      <button onclick="verificarMudanca()">Verificar</button>
+      <div id="output"><br>Clique no butão acima para analisar a mudança de preço</div>
+    
+    
+  <style>
+    button {
+           width: 150px;
+           padding: 20px;
+           cursor: pointer;
+           
+       }
+    </style>
+</body>
+</html>

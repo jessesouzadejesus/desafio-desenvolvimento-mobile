@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor R$ -> US$</title>
+</head>
+<body onload="iniciarConversor()">
+
+    <h1>Conversor R$ -> US$</h1>
+    <button onclick="converterDolar()">Converter</button>
+    <div id="resultado">Clique no botão acima para iniciar</div>
+
+  <script>
+    var cotacaoDolar;
+    
+    function iniciarConversor() {
+      // Solicita a digitação da cotação do dólar
+      cotacaoDolar = parseFloat(prompt("Antes de mais nada. Quanto está a cotação do dólar agora? "));
+    }
+    
+    function converterDolar() {
+      // Solicita a digitação da quantidade de reais na carteira
+      var reais = parseFloat(prompt("Quantos R$ você tem na carteira?"));
+      
+      // Calcula a quantidade de dólares
+      var dolares = reais / cotacaoDolar;
+      
+      // Exibe o resultado na página
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "Valor em reais (R$): " + reais + "<br>" +
+                            "Valor em dólares (US$): " + dolares.toFixed(2);
+    }
+  </script>
+  <style>
+ button {
+        width: 150px;
+        padding: 20px;
+        cursor: pointer;
+        margin: 10px;
+    }
+</style>
+</body>
+</html>

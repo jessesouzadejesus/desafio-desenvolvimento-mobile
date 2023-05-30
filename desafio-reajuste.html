@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+</head>
+<body>
+  <script>
+    function calcularReajuste() {
+      // Solicita o nome do funcionário
+      var nome = prompt("Qual é o nome do funcionário?");
+      
+      // Solicita o salário atual do funcionário
+      var salarioAtual = parseFloat(prompt("Qual é o salário atual de " + nome + "?"));
+      
+      // Solicita a porcentagem de reajuste salarial
+      var percentual = parseFloat(prompt("Qual será a porcentagem de reajuste salarial?"));
+      
+      // Calcula o valor do reajuste
+      var reajuste = salarioAtual * (percentual / 100);
+      
+      // Calcula o novo salário com o reajuste
+      var novoSalario = salarioAtual + reajuste;
+      
+      // Exibe o resultado
+      document.getElementById("resultado").innerHTML = "<br>"+ nome +" recebeu um aumento salarial!<br> <br>"+
+                                                      "Salário atual era: R$" + salarioAtual.toFixed(2) + "<br>" +
+                                                      "Porcentagem de reajuste: " + percentual.toFixed(2) + "%<br>" +
+                                                      "Reajuste: R$" + reajuste.toFixed(2) + "<br>" +
+                                                      "Novo salário: R$" + novoSalario.toFixed(2);
+    }
+  </script>
+
+  <h1>Reajuste Salarial</h1>
+  <button onclick="calcularReajuste()">Reajustar salário</button>
+  <div id="resultado"><br>Clique no botão acima para iniciar.</div>
+  <style>
+    button {
+           width: 150px;
+           padding: 20px;
+           cursor: pointer;
+           
+       }
+    </style>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperatura</title>
+</head>
+<body>
+
+  <script>
+    function converterTemperatura() {
+      // Solicita a digitação da temperatura em Celsius
+      var celsius = parseFloat(prompt("Digite a temperatura em graus Celsius (°C):"));
+      
+      // Calcula a temperatura em Kelvin
+      var kelvin = celsius + 273.15;
+      
+      // Calcula a temperatura em Fahrenheit
+      var fahrenheit = (celsius * 9/5) + 32;
+      
+      // Exibe o resultado na página
+      var resultado = document.getElementById("resultado");
+      resultado.innerHTML = "A Temperatura de " + celsius + "(°C), corresponde a..."+"<br>" +
+                             kelvin + "°k (Kelvin) " + "<br>" +
+                           fahrenheit + "°F (Fahrenheit) " ;
+    }
+  </script>
+
+  <h1>Conversor de Temperatura</h1>
+  <button onclick="converterTemperatura()">Converter</button>
+  <div id="resultado">Clique no botão acima para iniciar</div>
+
+  <style>
+    button {
+           width: 150px;
+           padding: 20px;
+           cursor: pointer;
+           margin: 10px;
+       }
+   </style>
+</body>
+</html>

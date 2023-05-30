@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+</head>
+<body>
+  
+      <style>
+        .aprovado {
+          color: green;
+        }
+        .recuperacao {
+          color: orange;
+        }
+        .reprovado {
+          color: red;
+        }
+      </style>
+      <script>
+        function calcularMedia() {
+          // Solicita a digitação do nome do aluno
+          var nome = prompt("Qual é o nome do aluno?");
+          
+          // Solicita a digitação das notas do aluno
+          var nota1 = parseFloat(prompt("Primeira nota de " + nome));
+          var nota2 = parseFloat(prompt("Segunda nota de " + nome));
+          
+          // Calcula a média do aluno
+          var media = (nota1 + nota2) / 2;
+          
+          // Define a situação do aluno com base na média
+          var situacao = "";
+          var corSituacao = "";
+          if (media < 3.0) {
+            situacao = "REPROVADO";
+            corSituacao = "reprovado";
+            
+          } else if (media >= 3.0 && media <= 6.0) {
+            situacao = "RECUPERAÇÃO";
+            corSituacao = "recuperacao";
+          } else {
+            situacao = "APROVADO";
+            corSituacao = "aprovado";
+          }
+          
+          // Exibe o resultado na página
+          var output = document.getElementById("output");
+          output.innerHTML = "<br><strong>Analisando a situação de " + nome + "</strong><br>" +
+                             "<br>Com as notas " + nota1 + " e " + nota2 + ", a <strong>média é " + media.toFixed(2) + "</strong><br><br>" 
+                            
+            if (media > 6){
+                output.innerHTML+= "Com média acima de 6,0, o aluno está  <span class='" + corSituacao + "'>" + situacao + "</span>"
+
+            }else if(media > 3 && media < 6){
+                output.innerHTML+=  "Com média entre de 3,0 e 6,0, o aluno está  <span class='" + corSituacao + "'>" + situacao + "</span>"
+
+            }else{
+                output.innerHTML+= "Com média abaixo de 3,0, o aluno está  <span class='" + corSituacao + "'>" + situacao + "</span>"
+            }
+        }
+      </script>
+
+      <h1>Situação do Aluno</h1>
+      <button onclick="calcularMedia()">Entrar com as notas</button>
+      <div id="output"></div>
+
+    <style>
+        button {
+               width: 150px;
+               padding: 20px;
+               cursor: pointer;
+               
+           }
+        </style>
+</body>
+</html>

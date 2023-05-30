@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcule Troco</title>
+</head>
+<body>
+    
+  <script>
+    function calcularTroco() {
+      // Solicita o nome do produto
+      var produto = prompt("Qual produto você está comprando?");
+      
+      // Solicita o preço do produto
+      var preco = parseFloat(prompt("Quanto custa " + produto + "?"));
+      
+      // Solicita o valor em dinheiro dado pelo cliente
+      var valorPago = parseFloat(prompt("Qual foi o valor que você deu para pagar " + produto + "?"));
+      
+      // Calcula o troco
+      var troco = valorPago - preco;
+      
+      // Exibe a mensagem final
+      alert("Você comprou " + produto + " que custou R$" + preco.toFixed(2) + ".\n" +
+            "Deu R$" + valorPago.toFixed(2) + " em dinheiro e vai receber R$" + troco.toFixed(2) + " de troco.\n" +
+            "Volte sempre!");
+    }
+  </script>
+  <h1>Calculadora de Troco</h1>
+  <button onclick="calcularTroco()">Iniciar</button>
+  <style>
+    button {
+           width: 150px;
+           padding: 20px;
+           cursor: pointer;
+           
+       }
+    </style>
+</body>
+</html>

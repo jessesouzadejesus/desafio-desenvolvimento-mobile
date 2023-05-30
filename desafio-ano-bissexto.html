@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ano bissexto</title>
+</head>
+<body>
+      <style>
+        
+        button {
+        width: 150px;
+        padding: 20px;
+        cursor: pointer;
+    }
+        
+        .resultado {
+          margin-top: 20px;
+        }
+        
+        .resultado span {
+          font-weight: bold;
+        }
+        
+        .bissexto {
+          color: green;
+        }
+        
+        .nao-bissexto {
+          color: red;
+        }
+      </style>
+      <script>
+        function verificarAnoBissexto() {
+          // Solicita a digitação do ano
+          var ano = parseInt(prompt("Informe um ano para saber se ele é bissexto:"));
+          
+          // Verifica se o ano é bissexto
+          var bissexto = false;
+          
+          if ((ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0) {
+            bissexto = true;
+          }
+          
+          // Exibe o resultado na página
+          var resultado = document.getElementById("resultado");
+          
+          if (bissexto) {
+            resultado.innerHTML = "Analisando o ano de " + ano + "<br>" +
+                                  "O ano de "+ ano +" <span class='bissexto'>" + 'É BISSEXTO!' + "</span> &#x2705;";
+            resultado.className = "resultado";
+          } else {
+            resultado.innerHTML = "Analisando o ano de " + ano + "<br>" +
+                                "O ano de "+ ano +" <span class='nao-bissexto'>" + 'NÃO É BISSEXTO' + "</span> &#x274C;;";
+            resultado.className = "resultado";
+          }
+        }
+      </script>
+    
+      <h1>Ano bissexto</h1>
+      <button onclick="verificarAnoBissexto()">Verificar</button>
+      <p id="resultado">Informe um ano para saber se ele é bissexto.</p>
+    
+</body>
+</html>

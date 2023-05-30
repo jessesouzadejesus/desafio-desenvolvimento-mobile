@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos os desafios</title>
+</head>
+<body>
+    <style>
+       .btn-link {
+        display: inline-block;
+        font-size: 18px;
+        color: #ffffff;
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #0055af;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    
+    .btn-link:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0));
+        transition: left 1s;
+        z-index: -1;
+    }
+        .btn-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-link:hover:before {
+        left: 100%;
+    }
+        .btn-link:hover {
+            background: #2C3E50;
+background: -webkit-linear-gradient(to right, #4CA1AF, #2C3E50);
+background: linear-gradient(to right, #4CA1AF, #2C3E50);
+        }
+     
+    </style>
+
+<a href="desafio-desconto.html" class="btn-link" target="_blank">Desafio Desconto</a>
+<a href="desafio-ano-bissexto.html" class="btn-link" target="_blank">Desafio Ano Bissexto</a>
+<a href="desafio-antes-depois.html" class="btn-link" target="_blank">Desafio Antes e Depois</a>
+<a href="desafio-bhaskara.html" class="btn-link" target="_blank">Desafio Bhaskara</a>
+<a href="desafio-boas-vindas.html" class="btn-link" target="_blank">Desafio Boas-Vindas</a>
+<a href="desafio-conversor-medidas.html" class="btn-link" target="_blank">Desafio Conversor de Medidas</a>
+<a href="desafio-conversor-monetario.html" class="btn-link" target="_blank">Desafio Conversor Monetário</a>
+<a href="desafio-conversor-temperatura.html" class="btn-link" target="_blank">Desafio Conversor de Temperatura</a>
+<a href="desafio-mensagens.html" class="btn-link" target="_blank">Desafio Mensagens</a>
+<a href="desafio-preco-mudou.html" class="btn-link" target="_blank">Desafio Preço Mudou</a>
+<a href="desafio-reajuste.html" class="btn-link" target="_blank">Desafio Reajuste</a>
+<a href="desafio-situacao-aluno.html" class="btn-link" target="_blank">Desafio Situação do Aluno</a>
+<a href="desafio-troco.html" class="btn-link" target="_blank">Desafio Troco</a>
+    
+</body>
+</html>
